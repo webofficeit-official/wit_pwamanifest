@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf" date="2024-01-23T22:22:32Z" product-name="backend">
+		<header/>
+		<body>
+			<trans-unit id="site.tab.wit_pwamanifest" resname="site.tab.wit_pwamanifest">
+				<source>PWA Manifest</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_shortcuts" resname="site.tab.wit_pwamanifest_shortcuts">
+				<source>PWA Manifest Shortcuts</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_screenshots" resname="site.tab.wit_pwamanifest_screenshots">
+				<source>PWA Manifest Screenshots</source>
+			</trans-unit>
+
+			<trans-unit id="site.tab.wit_pwamanifest_name" resname="site.tab.wit_pwamanifest_name">
+				<source>PWA Manifest name</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_icons" resname="site.tab.wit_pwamanifest_icons">
+				<source>PWA Manifest icons</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_shortcut_1" resname="site.tab.wit_pwamanifest_shortcut_1">
+				<source>PWA Manifest Shortcut 1</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_shortcut_2" resname="site.tab.wit_pwamanifest_shortcut_2">
+				<source>PWA Manifest Shortcut 2</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_shortcut_3" resname="site.tab.wit_pwamanifest_shortcut_3">
+				<source>PWA Manifest Shortcut 3</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_screenshot_1" resname="site.tab.wit_pwamanifest_screenshot_1">
+				<source>PWA Manifest Screenshot 1</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_screenshot_2" resname="site.tab.wit_pwamanifest_screenshot_2">
+				<source>PWA Manifest Screenshot 2</source>
+			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_screenshot_3" resname="site.tab.wit_pwamanifest_screenshot_3">
+				<source>PWA Manifest Screenshot 3</source>
+			</trans-unit>
+
+			<trans-unit id="site.wit_pwamanifest.short_name" resname="site.wit_pwamanifest.short_name">
+				<source>Short Name</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.name" resname="site.wit_pwamanifest.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.id" resname="site.wit_pwamanifest.id">
+				<source>Id</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.start_url" resname="site.wit_pwamanifest.start_url">
+				<source>Start Url</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.color" resname="site.wit_pwamanifest.color">
+				<source>Background Color</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.display" resname="site.wit_pwamanifest.display">
+				<source>Display</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.scope" resname="site.wit_pwamanifest.scope">
+				<source>Scope</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.theme_color" resname="site.wit_pwamanifest.theme_color">
+				<source>Theme Color</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.description" resname="site.wit_pwamanifest.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.small_icon_path" resname="site.wit_pwamanifest.small_icon_path">
+				<source>Small icon path</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.small_icon_type" resname="site.wit_pwamanifest.small_icon_type">
+				<source>Small icon type</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.small_icon_size" resname="site.wit_pwamanifest.small_icon_size">
+				<source>Small icon size</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.big_icon_path" resname="site.wit_pwamanifest.big_icon_path">
+				<source>Big icon path</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.big_icon_type" resname="site.wit_pwamanifest.big_icon_type">
+				<source>Big icon type</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.big_icon_size" resname="site.wit_pwamanifest.big_icon_size">
+				<source>Big icon size</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.shortcut_name" resname="site.wit_pwamanifest.shortcut_name">
+				<source>Name (required)</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.shortcut_short_name" resname="site.wit_pwamanifest.shortcut_short_name">
+				<source>Short name</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.shortcut_description" resname="site.wit_pwamanifest.shortcut_description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.shortcut_url" resname="site.wit_pwamanifest.shortcut_url">
+				<source>URL (required)</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.shortcut_icon_src" resname="site.wit_pwamanifest.shortcut_icon_src">
+				<source>Icon source</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.shortcut_icon_sizes" resname="site.wit_pwamanifest.shortcut_icon_sizes">
+				<source>Icon sizes</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.screenshot_src" resname="site.wit_pwamanifest.screenshot_src">
+				<source>Screenshot source</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.screenshot_type" resname="site.wit_pwamanifest.screenshot_type">
+				<source>Screenshot type</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.screenshot_size" resname="site.wit_pwamanifest.screenshot_size">
+				<source>Screenshot size</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.screenshot_form_factor" resname="site.wit_pwamanifest.screenshot_form_factor">
+				<source>Form factor</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
