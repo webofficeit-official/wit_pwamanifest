@@ -79,6 +79,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestSmallIconPath'] 
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.small_icon_path',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -87,6 +88,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestSmallIconType'] 
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.small_icon_type',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.type',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -95,6 +97,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestSmallIconSize'] 
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.small_icon_size',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -103,6 +106,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestBigIconPath'] = 
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.big_icon_path',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path_2',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -111,6 +115,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestBigIconType'] = 
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.big_icon_type',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.type',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -119,6 +124,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestBigIconSize'] = 
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.big_icon_size',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size_2',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -169,6 +175,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestShortcuts1IconSr
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.shortcut_icon_src',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -177,7 +184,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestShortcuts1IconSi
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.shortcut_icon_sizes',
     'config' => [
         'type' => 'input',
-        'placeholder' => '192x192',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -228,6 +235,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestShortcuts2IconSr
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.shortcut_icon_src',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -236,7 +244,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestShortcuts2IconSi
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.shortcut_icon_sizes',
     'config' => [
         'type' => 'input',
-        'placeholder' => '192x192',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -287,6 +295,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestShortcuts3IconSr
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.shortcut_icon_src',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -295,7 +304,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestShortcuts3IconSi
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.shortcut_icon_sizes',
     'config' => [
         'type' => 'input',
-        'placeholder' => '192x192',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -305,6 +314,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot1Src']
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_src',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -313,6 +323,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot1Type'
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_type',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.type',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -321,6 +332,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot1Size'
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_size',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -341,6 +353,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot2Src']
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_src',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -349,6 +362,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot2Type'
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_type',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.type',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -357,6 +371,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot2Size'
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_size',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -377,6 +392,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot3Src']
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_src',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.path',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -385,6 +401,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot3Type'
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_type',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.type',
         'size' => 20,
         'eval' => 'trim'
     ],
@@ -393,6 +410,7 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot3Size'
     'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.screenshot_size',
     'config' => [
         'type' => 'input',
+        'placeholder' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.placeholder.size',
         'size' => 20,
         'eval' => 'trim'
     ],

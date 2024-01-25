@@ -113,6 +113,22 @@
 			<trans-unit id="site.wit_pwamanifest.screenshot_form_factor" resname="site.wit_pwamanifest.screenshot_form_factor">
 				<source>Form factor</source>
 			</trans-unit>
+
+			<trans-unit id="site.wit_pwamanifest.placeholder.path" resname="site.wit_pwamanifest.placeholder.path">
+				<source>fileadmin/woit_pwamanifest/192x192.png</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.placeholder.type" resname="site.wit_pwamanifest.placeholder.type">
+				<source>image/png</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.placeholder.size" resname="site.wit_pwamanifest.placeholder.size">
+				<source>192x192</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.placeholder.path_2" resname="site.wit_pwamanifest.placeholder.path_2">
+				<source>fileadmin/woit_pwamanifest/548x548.png</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.placeholder.size_2" resname="site.wit_pwamanifest.placeholder.size_2">
+				<source>548x548</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
