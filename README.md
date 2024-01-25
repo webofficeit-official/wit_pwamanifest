@@ -30,6 +30,4 @@ The Shortcuts Configuration section provides options for configuring shortcuts t
 
 The Screenshots Configuration section provides options for configuring screenshots that enhance the user experience on your Progressive Web App (PWA). Each screenshot includes the following parameters: Source, Type, Sizes, Form Factor
 
-## Screenshots
-
 Upon completing the essential site configuration, the final step is to seamlessly integrate this extension into your TYPO3 template. By doing so, the extension will automatically activate and incorporate the configured manifest data, enhancing the overall performance and user experience of your website.
