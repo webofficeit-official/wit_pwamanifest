@@ -2,10 +2,31 @@
 
 The `wit_pwamanifest` extension facilitates the management of manifest data to generate a Progressive Web App (PWA). This documentation outlines the installation process and provides details on the configuration options for managing the PWA manifest.
 
+## Compatibility
+
+TYPO3 10.4 - 14.x.
+
 ## Installation
 
 Install this extension via `composer req woit/wit-pwamanifest` and activate
 the extension in the Extension Manager of your TYPO3 installation.
+
+## TypoScript integration
+
+TYPO3 13+ sites configure TypoScript via **Sets** rather than static includes.
+This extension ships a Set (`Configuration/Sets/WitPwamanifest`) that provides
+the manifest endpoint and the `<link rel="manifest">` tag.
+
+Add it to your site's `config.yaml`:
+
+```yaml
+dependencies:
+  - woit/wit-pwamanifest
+```
+
+On TYPO3 10-12, include the extension's static TypoScript template
+(`Configuration/TypoScript`) in your root template the classic way
+("Include static (from extensions)") instead.
 
 ## Configuration
 

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Woit\WitPwamanifest\Service;
 
+use TYPO3\CMS\Core\Attribute\AsAllowedCallable;
 use TYPO3\CMS\Core\Configuration\ExtensionConfiguration;
 use TYPO3\CMS\Core\Http\ServerRequest;
 use TYPO3\CMS\Core\Site\Entity\Site;
@@ -25,6 +26,7 @@ use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
  * Settings service
  */
 class PwamanifestService {
+    #[AsAllowedCallable]
     public function manifestConfiguration() {
         $siteConfiguration = $this->getSite()->getConfiguration();
         $settings = [
