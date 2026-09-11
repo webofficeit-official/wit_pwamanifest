@@ -54,8 +54,9 @@ class PwamanifestService {
         $offlineUrl = json_encode($this->getOfflineUrl($this->getSite()->getConfiguration()), JSON_THROW_ON_ERROR);
 
         return <<<JS
-const WIT_PWA_CACHE_NAME = 'wit-pwa-offline-v1';
+const WIT_PWA_CACHE_NAME = 'wit-pwa-offline-v2';
 const WIT_PWA_OFFLINE_URL = {$offlineUrl};
+const WIT_PWA_ASSET_DESTINATIONS = ['style', 'script', 'font', 'image'];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
@@ -76,13 +77,37 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-    if (event.request.mode !== 'navigate') {
+    const request = event.request;
+
+    if (request.method !== 'GET') {
         return;
     }
 
-    event.respondWith(
-        fetch(event.request).catch(() => caches.match(WIT_PWA_OFFLINE_URL))
-    );
+    if (request.mode === 'navigate') {
+        event.respondWith(
+            fetch(request).catch(() => caches.match(WIT_PWA_OFFLINE_URL))
+        );
+        return;
+    }
+
+    if (WIT_PWA_ASSET_DESTINATIONS.includes(request.destination)) {
+        event.respondWith(
+            caches.match(request).then((cached) => {
+                if (cached) {
+                    return cached;
+                }
+
+                return fetch(request).then((response) => {
+                    if (response.ok) {
+                        const responseClone = response.clone();
+                        caches.open(WIT_PWA_CACHE_NAME).then((cache) => cache.put(request, responseClone));
+                    }
+
+                    return response;
+                });
+            })
+        );
+    }
 });
 JS;
     }
