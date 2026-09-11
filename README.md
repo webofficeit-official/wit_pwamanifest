@@ -4,7 +4,7 @@ The `wit_pwamanifest` extension facilitates the management of manifest data to g
 
 ## Compatibility
 
-TYPO3 10.4 - 14.x.
+TYPO3 13.4 - 14.x.
 
 ## Installation
 
@@ -24,9 +24,6 @@ dependencies:
   - woit/wit-pwamanifest
 ```
 
-On TYPO3 10-12, include the extension's static TypoScript template
-(`Configuration/TypoScript`) in your root template the classic way
-("Include static (from extensions)") instead.
 
 ## Configuration
 
