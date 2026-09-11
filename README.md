@@ -49,3 +49,24 @@ The Shortcuts Configuration section provides options for configuring shortcuts t
 The Screenshots Configuration section provides options for configuring screenshots that enhance the user experience on your Progressive Web App (PWA). Each screenshot includes the following parameters: Source, Type, Sizes, Form Factor
 
 Upon completing the essential site configuration, the final step is to seamlessly integrate this extension into your TYPO3 template. By doing so, the extension will automatically activate and incorporate the configured manifest data, enhancing the overall performance and user experience of your website.
+
+## Offline support / Service Worker
+
+Enable "Enable service worker / offline support" in Site Configuration to
+register a minimal service worker on the frontend. It caches one offline
+fallback page and serves it whenever a page navigation fails due to no
+network connection. It does not cache other assets or pages.
+
+- **Enable service worker / offline support** – toggles the feature on/off.
+- **Offline fallback page** – the page shown while offline. Falls back to
+  the manifest `start_url` (or `/`) if left empty.
+
+The service worker script is served through the same `typeNum`-based
+endpoint mechanism as the manifest (`?type=836`), with a
+`Service-Worker-Allowed: /` response header, which grants it control over
+the entire site (`scope: '/'`) despite not being served from a literal
+`/service-worker.js` path. No RouteEnhancer or docroot changes are required.
+
+This is intentionally minimal - no asset caching, no configurable caching
+strategy, no versioned multi-cache setup. It only makes the site installable
+with a working offline fallback.

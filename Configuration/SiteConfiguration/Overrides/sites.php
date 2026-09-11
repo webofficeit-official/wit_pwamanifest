@@ -427,6 +427,31 @@ $GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestScreenshot3FormF
     ],
 ];
 
+$GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestServiceWorkerEnabled'] = [
+    'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.service_worker_enabled',
+    'config' => [
+        'type' => 'check',
+        'renderType' => 'checkboxToggle',
+    ],
+];
+$GLOBALS['SiteConfiguration']['site']['columns']['WitPwamanifestOfflinePageUrl'] = [
+    'label' => 'LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.wit_pwamanifest.offline_page_url',
+    'description' => 'Page shown when the site is opened without a network connection. If empty, the manifest start_url (or "/") is used.',
+    'config' => [
+        'size' => 50,
+        'eval' => 'trim',
+        'renderType' => 'inputLink',
+        'type' => 'input',
+        'fieldControl' => [
+            'linkPopup' => [
+                'options' => [
+                    'blindLinkOptions' => 'file,telephone,mail,spec,folder,url',
+                ],
+            ],
+        ],
+    ],
+];
+
 // And new palette
 $GLOBALS['SiteConfiguration']['site']['palettes']['WitPwamanifestName']['showitem'] = 'WitPwamanifestShortName, WitPwamanifestName, WitPwamanifestStartUrl, --linebreak--, WitPwamanifestScope, WitPwamanifestId, WitPwamanifestDisplay, --linebreak--,WitPwamanifestbackgroundColor, WitPwamanifestThemeColor, WitPwamanifestDescription';
 $GLOBALS['SiteConfiguration']['site']['palettes']['WitPwamanifestIcons']['showitem'] = 'WitPwamanifestSmallIconPath, WitPwamanifestSmallIconType, WitPwamanifestSmallIconSize, --linebreak--, WitPwamanifestBigIconPath, WitPwamanifestBigIconType, WitPwamanifestBigIconSize';
@@ -436,12 +461,14 @@ $GLOBALS['SiteConfiguration']['site']['palettes']['WitPwamanifestShortcuts3']['s
 $GLOBALS['SiteConfiguration']['site']['palettes']['WitPwamanifestScreenshot1']['showitem'] = 'WitPwamanifestScreenshot1Src, WitPwamanifestScreenshot1Type, WitPwamanifestScreenshot1Size, WitPwamanifestScreenshot1FormFactor';
 $GLOBALS['SiteConfiguration']['site']['palettes']['WitPwamanifestScreenshot2']['showitem'] = 'WitPwamanifestScreenshot2Src, WitPwamanifestScreenshot2Type, WitPwamanifestScreenshot2Size, WitPwamanifestScreenshot2FormFactor';
 $GLOBALS['SiteConfiguration']['site']['palettes']['WitPwamanifestScreenshot3']['showitem'] = 'WitPwamanifestScreenshot3Src, WitPwamanifestScreenshot3Type, WitPwamanifestScreenshot3Size, WitPwamanifestScreenshot3FormFactor';
+$GLOBALS['SiteConfiguration']['site']['palettes']['WitPwamanifestServiceWorker']['showitem'] = 'WitPwamanifestServiceWorkerEnabled, --linebreak--, WitPwamanifestOfflinePageUrl';
 
 // And add it to showitem
 $GLOBALS['SiteConfiguration']['site']['types']['0']['showitem'] = '--palette--;;default,--palette--;;base,
 --div--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest;WitPwamanifestName,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_name;WitPwamanifestName,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_icons;WitPwamanifestIcons,
 --div--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_shortcuts;WitPwamanifestName,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_shortcut_1;WitPwamanifestShortcuts1,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_shortcut_2;WitPwamanifestShortcuts2,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_shortcut_3;WitPwamanifestShortcuts3,
 --div--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_screenshots;WitPwamanifestName,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_screenshot_1;WitPwamanifestScreenshot1,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_screenshot_2;WitPwamanifestScreenshot2,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_screenshot_3;WitPwamanifestScreenshot3,
+--div--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_service_worker;WitPwamanifestName,--palette--;LLL:EXT:wit_pwamanifest/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.wit_pwamanifest_service_worker;WitPwamanifestServiceWorker,
 --div--;LLL:EXT:backend/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.languages, languages,
 --div--;LLL:EXT:backend/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.errorHandling, errorHandling,
 --div--;LLL:EXT:backend/Resources/Private/Language/locallang_siteconfiguration_tca.xlf:site.tab.routes, routes';

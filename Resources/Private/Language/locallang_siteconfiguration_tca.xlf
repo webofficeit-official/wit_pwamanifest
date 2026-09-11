@@ -12,6 +12,9 @@
 			<trans-unit id="site.tab.wit_pwamanifest_screenshots" resname="site.tab.wit_pwamanifest_screenshots">
 				<source>PWA Manifest Screenshots</source>
 			</trans-unit>
+			<trans-unit id="site.tab.wit_pwamanifest_service_worker" resname="site.tab.wit_pwamanifest_service_worker">
+				<source>PWA Offline / Service Worker</source>
+			</trans-unit>
 
 			<trans-unit id="site.tab.wit_pwamanifest_name" resname="site.tab.wit_pwamanifest_name">
 				<source>PWA Manifest name</source>
@@ -112,6 +115,13 @@
 			</trans-unit>
 			<trans-unit id="site.wit_pwamanifest.screenshot_form_factor" resname="site.wit_pwamanifest.screenshot_form_factor">
 				<source>Form factor</source>
+			</trans-unit>
+
+			<trans-unit id="site.wit_pwamanifest.service_worker_enabled" resname="site.wit_pwamanifest.service_worker_enabled">
+				<source>Enable service worker / offline support</source>
+			</trans-unit>
+			<trans-unit id="site.wit_pwamanifest.offline_page_url" resname="site.wit_pwamanifest.offline_page_url">
+				<source>Offline fallback page</source>
 			</trans-unit>
 
 			<trans-unit id="site.wit_pwamanifest.placeholder.path" resname="site.wit_pwamanifest.placeholder.path">

@@ -48,6 +48,88 @@ class PwamanifestService {
         return json_encode($settings, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES);
     }
 
+    #[AsAllowedCallable]
+    public function serviceWorkerScript(): string
+    {
+        $offlineUrl = json_encode($this->getOfflineUrl($this->getSite()->getConfiguration()), JSON_THROW_ON_ERROR);
+
+        return <<<JS
+const WIT_PWA_CACHE_NAME = 'wit-pwa-offline-v1';
+const WIT_PWA_OFFLINE_URL = {$offlineUrl};
+
+self.addEventListener('install', (event) => {
+    event.waitUntil(
+        caches.open(WIT_PWA_CACHE_NAME).then((cache) => cache.add(WIT_PWA_OFFLINE_URL))
+    );
+    self.skipWaiting();
+});
+
+self.addEventListener('activate', (event) => {
+    event.waitUntil(
+        caches.keys().then((keys) => Promise.all(
+            keys
+                .filter((key) => key !== WIT_PWA_CACHE_NAME)
+                .map((key) => caches.delete(key))
+        ))
+    );
+    self.clients.claim();
+});
+
+self.addEventListener('fetch', (event) => {
+    if (event.request.mode !== 'navigate') {
+        return;
+    }
+
+    event.respondWith(
+        fetch(event.request).catch(() => caches.match(WIT_PWA_OFFLINE_URL))
+    );
+});
+JS;
+    }
+
+    #[AsAllowedCallable]
+    public function serviceWorkerRegistration(): string
+    {
+        $siteConfiguration = $this->getSite()->getConfiguration();
+        if (($siteConfiguration['WitPwamanifestServiceWorkerEnabled'] ?? false) !== true) {
+            return '';
+        }
+
+        $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+        $pageId = $this->getServerRequest()->getAttribute('routing')?->getPageId();
+        $scriptUrl = json_encode($contentObject->typoLink_URL([
+            'parameter' => $pageId,
+            'additionalParams' => '&type=836',
+            'forceAbsoluteUrl' => true,
+        ]), JSON_THROW_ON_ERROR);
+
+        return <<<HTML
+<script>
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', async () => {
+        try {
+            await navigator.serviceWorker.register({$scriptUrl}, { scope: '/' });
+        } catch (error) {
+            console.error('Service worker registration failed:', error);
+        }
+    });
+}
+</script>
+HTML;
+    }
+
+    protected function getOfflineUrl(array $siteConfiguration): string
+    {
+        $offlinePage = $siteConfiguration['WitPwamanifestOfflinePageUrl'] ?? '';
+        if ($offlinePage === '') {
+            return $siteConfiguration['WitPwamanifestStartUrl'] ?? '/';
+        }
+
+        $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);
+
+        return $contentObject->typoLink_URL(['parameter' => $offlinePage, 'forceAbsoluteUrl' => true]);
+    }
+
     protected function getManifestIconsConfiguration(array $siteConfiguration): array
     {
         $icons = [];
