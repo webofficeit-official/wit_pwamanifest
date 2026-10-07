@@ -24,6 +24,12 @@ PWA Manifest
 :License:
     GPL-2.0-or-later
 
+:Repository:
+    https://github.com/webofficeit-official/wit_pwamanifest
+
+:Packagist:
+    https://packagist.org/packages/woit/wit-pwamanifest
+
 :Rendered:
     |today|
 
