@@ -13,7 +13,7 @@
                typo3-core-preferred="stable"
     />
     <project title="PWA Manifest"
-             release="1.2.2"
+             release="1.2.3"
              version="1.2"
              copyright="Team WebofficeIT"
     />
