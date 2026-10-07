@@ -79,7 +79,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
     const request = event.request;
 
-    if (request.method !== 'GET') {
+    if (request.method !== 'GET' || !request.url.startsWith('http')) {
         return;
     }
 
@@ -147,7 +147,7 @@ HTML;
     {
         $offlinePage = $siteConfiguration['WitPwamanifestOfflinePageUrl'] ?? '';
         if ($offlinePage === '') {
-            return $siteConfiguration['WitPwamanifestStartUrl'] ?? '/';
+            return ($siteConfiguration['WitPwamanifestStartUrl'] ?? '') ?: '/';
         }
 
         $contentObject = GeneralUtility::makeInstance(ContentObjectRenderer::class);

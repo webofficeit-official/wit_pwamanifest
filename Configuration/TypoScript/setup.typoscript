@@ -47,7 +47,6 @@ serviceWorker {
 ##############
 #### PAGE ####
 ##############
-page = PAGE
 page {
     headerData {
         999999 = TEXT
