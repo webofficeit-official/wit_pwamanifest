@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<guides xmlns="https://www.phpdoc.org/guides"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.phpdoc.org/guides ../vendor/phpdocumentor/guides-cli/resources/schema/guides.xsd"
+        links-are-relative="true">
+    <extension class="\T3Docs\Typo3DocsTheme\DependencyInjection\Typo3DocsThemeExtension"
+               project-home="https://extensions.typo3.org/extension/wit_pwamanifest"
+               project-contact="mailto:info@webofficeit.com"
+               project-repository="https://github.com/webofficeit-official/wit_pwamanifest"
+               edit-on-github="webofficeit-official/wit_pwamanifest"
+               edit-on-github-branch="main"
+               interlink-shortcode="woit/wit-pwamanifest"
+               typo3-core-preferred="stable"
+    />
+    <project title="PWA Manifest"
+             release="1.2.2"
+             version="1.2"
+             copyright="Team WebofficeIT"
+    />
+</guides>

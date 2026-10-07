@@ -1,6 +1,11 @@
 # TYPO3 Extension `wit_pwamanifest`
 
-The `wit_pwamanifest` extension facilitates the management of manifest data to generate a Progressive Web App (PWA). This documentation outlines the installation process and provides details on the configuration options for managing the PWA manifest.
+Make your TYPO3 site installable and offline-ready with a Progressive Web App
+(PWA) manifest and a minimal service worker. All values are maintained in the
+TYPO3 site configuration.
+
+The full documentation is located in [`Documentation/`](Documentation/Index.rst)
+and is rendered on [docs.typo3.org](https://docs.typo3.org/).
 
 ## Compatibility
 
@@ -8,14 +13,16 @@ TYPO3 13.4 - 14.x.
 
 ## Installation
 
-Install this extension via `composer req woit/wit-pwamanifest` and activate
-the extension in the Extension Manager of your TYPO3 installation.
+```bash
+composer require woit/wit-pwamanifest
+```
 
 ## TypoScript integration
 
-TYPO3 13+ sites configure TypoScript via **Sets** rather than static includes.
-This extension ships a Set (`Configuration/Sets/WitPwamanifest`) that provides
-the manifest endpoint and the `<link rel="manifest">` tag.
+TYPO3 13+ sites configure TypoScript via **Site sets** rather than static
+includes. This extension ships the Set `woit/wit-pwamanifest`
+(`Configuration/Sets/WitPwamanifest`). It provides the manifest endpoint, the
+service worker endpoint and the `<link rel="manifest">` tag.
 
 Add it to your site's `config.yaml`:
 
@@ -24,49 +31,98 @@ dependencies:
   - woit/wit-pwamanifest
 ```
 
+If a `sys_template` record of the site has **Clear > Setup** checked, it
+removes the setup TypoScript of the Site set. Include the static template
+**WIT PWA Manifest (wit_pwamanifest)** in that record instead. Symptom otherwise: `?type=835` returns
+`No page configured for type=835.`
+
+Output only one `<link rel="manifest">` per page. Remove manifest links from
+your site package, otherwise the browser does not use this extension's manifest.
+
+| Endpoint       | URL           | Content-Type                |
+|----------------|---------------|-----------------------------|
+| Manifest       | `?type=835`   | `application/manifest+json` |
+| Service worker | `?type=836`   | `application/javascript`    |
 
 ## Configuration
 
-Go straight to Site Configuration in your TYPO3 backend and edit your page.
+Open the site configuration in the TYPO3 backend (TYPO3 v14: **Sites > Setup**) and edit your site.
+The extension adds four tabs.
+
 ![Configuration](Documentation/Images/Wit_PWAManifest.png)
 
-The Basic Manifest section provides essential settings for configuring the appearance and behavior of your Progressive Web App (PWA). The setting includes Short Name, Name, Scope, ID, Display, Background Color, Theme Color, Description, and Start URL.
+### PWA Manifest
 
-## PWA Manifest Icons
+Basic manifest data: Short Name, Name, Start Url, Scope, Id, Display
+(`standalone`, `fullscreen`, `minimal-ui`, `browser`), Background Color,
+Theme Color and Description.
 
-This screenshot showcases the PWA manifest icons configuration, which includes settings for small and large icons. Each icon requires the path, type, and size.
+Icons: one small and one big icon, each with path, type (e.g. `image/png`)
+and size (e.g. `192x192`). An icon is only added if its path is set.
 
-TYPO3 sites don't allow inline TCA, so we've created a separate configuration for shortcuts & screenshots. 
+Empty fields are omitted from the manifest.
 
-## Shortcuts
+Shortcuts and screenshots are provided as three fixed field groups each.
+
+### PWA Manifest Shortcuts
+
 ![Shortcuts](Documentation/Images/Wit_PWAManifest_Shortcuts.png)
 
-The Shortcuts Configuration section provides options for configuring shortcuts that enhance the user experience on your Progressive Web App (PWA). Each shortcut includes the following parameters: Name (Required), Short Name, Description, URL (Required), Icon Size, Icon Source
+Up to three shortcuts with Name, Short name, Description, URL, Icon source
+and Icon sizes. A shortcut is only added to the manifest if **URL** and at
+least one of **Name** or **Short name** are set.
 
-## Screenshots
+### PWA Manifest Screenshots
+
 ![Screenshots](Documentation/Images/Wit_PWAManifest_Screenshots.png)
 
-The Screenshots Configuration section provides options for configuring screenshots that enhance the user experience on your Progressive Web App (PWA). Each screenshot includes the following parameters: Source, Type, Sizes, Form Factor
+Up to three screenshots with Source, Type, Size and Form factor (`wide`,
+`narrow`). A screenshot is only added to the manifest if **Source** is set.
 
-Upon completing the essential site configuration, the final step is to seamlessly integrate this extension into your TYPO3 template. By doing so, the extension will automatically activate and incorporate the configured manifest data, enhancing the overall performance and user experience of your website.
+### PWA Offline / Service Worker
 
-## Offline support / Service Worker
+![Service Worker](Documentation/Images/Wit_PWAManifest_ServiceWorker.png)
 
-Enable "Enable service worker / offline support" in Site Configuration to
-register a minimal service worker on the frontend. It caches one offline
-fallback page and serves it whenever a page navigation fails due to no
-network connection. It does not cache other assets or pages.
+- **Enable service worker / offline support** – registers the service worker
+  on every page.
+- **Offline fallback page** – page shown when a navigation fails because
+  there is no network connection. Falls back to the manifest `start_url`
+  (or `/`) if left empty.
 
-- **Enable service worker / offline support** – toggles the feature on/off.
-- **Offline fallback page** – the page shown while offline. Falls back to
-  the manifest `start_url` (or `/`) if left empty.
+## Offline support / Service worker
 
 The service worker script is served through the same `typeNum`-based
-endpoint mechanism as the manifest (`?type=836`), with a
-`Service-Worker-Allowed: /` response header, which grants it control over
-the entire site (`scope: '/'`) despite not being served from a literal
-`/service-worker.js` path. No RouteEnhancer or docroot changes are required.
+mechanism as the manifest (`?type=836`) with a `Service-Worker-Allowed: /`
+response header. It is registered with `scope: '/'`. No RouteEnhancer or
+docroot changes are required.
 
-This is intentionally minimal - no asset caching, no configurable caching
-strategy, no versioned multi-cache setup. It only makes the site installable
-with a working offline fallback.
+Behaviour:
+
+- **Install:** the offline fallback page is stored in the cache
+  `wit-pwa-offline-v2`.
+- **Activate:** all other caches of the origin are deleted.
+- **Page navigation:** network first; on failure the cached offline fallback
+  page is returned.
+- **Styles, scripts, fonts, images:** cache first; stored on first request.
+  Assets requested before are served from the cache, also offline.
+- Non-`GET` requests and non-`http(s)` requests (e.g. browser extensions)
+  are not handled.
+- The scope `/` includes the TYPO3 backend (`/typo3/`); backend assets are
+  cached as well.
+
+This is intentionally minimal: no configurable caching strategy and no cache
+versioning per deployment. Use versioned asset URLs (TYPO3 default cache
+busting) so changed files are loaded.
+
+Disabling the option only stops registration on new page loads. An already
+installed service worker stays active in the browser until it is
+unregistered.
+
+## Rendering the documentation locally
+
+```bash
+docker run --rm --pull always -v "$(pwd)":/project -it \
+  ghcr.io/typo3-documentation/render-guides:latest --config=Documentation
+```
+
+Output: `Documentation-GENERATED-temp/Index.html`
